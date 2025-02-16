@@ -1,4 +1,5 @@
 import os
+import pandas as pd
 from fileMetadata import fileMetadata
 
 class Track:
@@ -31,4 +32,5 @@ def fileAccess(sourceFolder):
     return trackList
 
 if __name__ == "__main__":
-    fileAccess(sourceFolder = input(""))
+    trackList = fileAccess(sourceFolder = input(""))
+    df = pd.DataFrame(trackList)
