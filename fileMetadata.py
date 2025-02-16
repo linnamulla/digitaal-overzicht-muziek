@@ -1,6 +1,7 @@
 from tinytag import TinyTag
 
 def fileMetadata(fileName):
+    # Returns a dictionary of metadata for a given file/track.
     tag: TinyTag = TinyTag.get(fileName)
     # Common metadata
     # File/audio properties
@@ -31,3 +32,7 @@ def fileMetadata(fileName):
             "title": metaTitle,
             "track": metaTrack,
             "year": metaYear}
+
+def fileTypeSupported():
+    # Returns a tuple containing file extensions supported by TinyTag.
+    return TinyTag.SUPPORTED_FILE_EXTENSIONS

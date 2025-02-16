@@ -1,12 +1,13 @@
 import os
-from fileMetadata import fileMetadata # Module for accessing metadata from a given file, uses TinyTag.
+from fileMetadata import fileMetadata, fileTypeSupported
 
 # Accesses the metadata for a track in a given file and appends it to a list as a dictionary.
 def fileAccess(sourceFolder):
     trackMetadata = []
+    fileTypes = (".aac", ".alac", ".flac", ".m4a", ".mp3", ".ogg", ".wav", ".wma")
     for roots, _, files in os.walk(sourceFolder):
         for file in files:
-            if file.endswith(".flac") == True or file.endswith(".mp3") == True:
+            if file.endswith(fileTypeSupported()) == True:
                 fileName = str(roots + "\\\\" + file)
                 print(f"Currently retrieving metadata for: {file}")
                 trackMetadata.append(fileMetadata(fileName))
