@@ -25,8 +25,9 @@ def fileAccess(sourceFolder):
         for file in files:
             if file.endswith(".flac") == True or file.endswith(".mp3") == True:
                 fileName = str(roots + "\\\\" + file)
+                print(f"Currently retrieving metadata for: {file}")
                 trackMetadata = fileMetadata(fileName)
-                trackList = trackList.append(dict(Track(trackMetadata)))
+                trackList.append(Track(trackMetadata).__dict__)
     return trackList
 
 if __name__ == "__main__":
