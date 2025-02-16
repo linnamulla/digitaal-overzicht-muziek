@@ -1,4 +1,4 @@
-from tinytag import TinyTag as TinyTag
+from tinytag import TinyTag
 
 def fileMetadata(fileName):
     tag: TinyTag = TinyTag.get(fileName)
@@ -19,4 +19,15 @@ def fileMetadata(fileName):
     metaTrack = tag.track
     metaYear = tag.year
 
-    return metaBitdepth, metaBitrate, metaDuration, metaFilesize, metaSamplerate, metaAlbum, metaAlbumartist, metaArtist, metaGenre, metaTitle, metaTrack, metaYear
+    return {"bitdepth": metaBitdepth,
+            "bitrate": metaBitrate,
+            "duration": metaDuration,
+            "filesize": metaFilesize,
+            "samplerate": metaSamplerate,
+            "album": metaAlbum,
+            "albumartist": metaAlbumartist,
+            "artist": metaArtist,
+            "genre": metaGenre,
+            "title": metaTitle,
+            "track": metaTrack,
+            "year": metaYear}
