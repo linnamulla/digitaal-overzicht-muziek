@@ -1,7 +1,7 @@
-from tinytag import TinyTag as tt
+from tinytag import TinyTag as TinyTag
 
 def fileMetadata(fileName):
-    tag: tt = tt.get(fileName)
+    tag: TinyTag = TinyTag.get(fileName)
     # Common metadata
     # File/audio properties
     metaBitdepth = tag.bitdepth
