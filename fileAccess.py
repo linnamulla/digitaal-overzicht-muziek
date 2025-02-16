@@ -1,7 +1,7 @@
 import os
-import pandas as pd
 from fileMetadata import fileMetadata
 
+# Creates a dictionary containing the metadata for a given track.
 class Track:
     def __init__(self, trackMetadata):
         self.bitdepth, self.bitrate, self.duration, self.filesize, self.samplerate, self.album, self.albumartist, self.artist, self.genre, self.title, self.track, self.year = trackMetadata
@@ -20,6 +20,7 @@ class Track:
                 "track": self.track,
                 "year": self.year}
 
+# Accesses the metadata for a track in a given file and appends it to a list as a dictionary.
 def fileAccess(sourceFolder):
     trackList = []
     for roots, _, files in os.walk(sourceFolder):
@@ -33,4 +34,3 @@ def fileAccess(sourceFolder):
 
 if __name__ == "__main__":
     trackList = fileAccess(sourceFolder = input(""))
-    df = pd.DataFrame(trackList)
