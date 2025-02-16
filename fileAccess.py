@@ -20,12 +20,14 @@ class Track:
                 "year": self.year}
 
 def fileAccess(sourceFolder):
+    trackList = []
     for roots, _, files in os.walk(sourceFolder):
         for file in files:
             if file.endswith(".flac") == True or file.endswith(".mp3") == True:
                 fileName = str(roots + "\\\\" + file)
                 trackMetadata = fileMetadata(fileName)
-                return dict(Track(trackMetadata))
+                trackList = trackList.append(dict(Track(trackMetadata)))
+    return trackList
 
 if __name__ == "__main__":
     fileAccess(sourceFolder = input(""))
