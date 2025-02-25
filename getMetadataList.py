@@ -17,4 +17,4 @@ def getMetadataList(sourceFolder: str) -> list[dict]:
 
 if __name__ == "__main__":
     sourceFolder: str = input("")
-    metadataList: list = getMetadataList(sourceFolder)
+    metadataList: list[dict] = getMetadataList(sourceFolder)
