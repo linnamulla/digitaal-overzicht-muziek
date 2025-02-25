@@ -15,6 +15,3 @@ def getFileMetadata(fileName: str) -> dict:
             "title": tag.title,
             "track": tag.track,
             "year": tag.year}
-
-def checkFileTypeSupport() -> tuple:
-    return TinyTag.SUPPORTED_FILE_EXTENSIONS
